@@ -43,7 +43,7 @@ def printandlog(logstr):
 
 def chunkedmd5(filepath):
 	""" Return the md5 hash of a big file """
-	
+
 	md5 = hashlib.md5()
 	try:
 		with open(filepath, 'rb') as f:
@@ -51,7 +51,7 @@ def chunkedmd5(filepath):
 				md5.update(chunk)
 			return md5.hexdigest()
 	except:
-		printandlog('[!] Cannot hash ' + filepath)
+		printandlog(f'[!] Cannot hash {filepath}')
 		return ''
 
 def Main():
